@@ -6,6 +6,11 @@ python:
 env:
   - DJANGO=2.0.2
   
+
+ install:
+  - pip install -r requirements.txt
+  - pip install django==$DJANGO --quiet
+  
  script: 
   - python manage.py test
  
