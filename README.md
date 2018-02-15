@@ -1,2 +1,2 @@
 # TDT4242
-Ecommerce project
+E-commerce project - exercise 2
