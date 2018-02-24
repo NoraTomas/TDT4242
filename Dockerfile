@@ -11,11 +11,11 @@ MAINTAINER Nora Tomas
 
 # Set env variables used in this Dockerfile (add a unique prefix, such as DOCKYARD)
 # Local directory with project source
-ENV DOCKYARD_SRC=TDT4242
+ENV DOCKYARD_SRC=tdt4242
 # Directory in container for all project files
 ENV DOCKYARD_SRVHOME=/srv
 # Directory in container for project source files
-ENV DOCKYARD_SRVPROJ=/srv/TDT4242
+ENV DOCKYARD_SRVPROJ=/srv/tdt4242
 
 # Update the default application repository sources list
 RUN apt-get update && apt-get -y upgrade
