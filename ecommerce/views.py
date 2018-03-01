@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login
 from django.views.generic import View
 from .forms import UserForm
 from django.template import loader
+from django.contrib.auth.models import User
 
 
 
@@ -33,3 +34,8 @@ def register_new_user(request):
 
 def load_home_page(request):
     return render(request, 'ecommerce/home.html')
+
+def user_detail(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    return render(request, 'resultregistration/user_detail.html',
+                  {'privatekey': user.pk})

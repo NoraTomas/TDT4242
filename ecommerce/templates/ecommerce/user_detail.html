@@ -9,15 +9,9 @@
 {% block content %}
 
     <div class="container">
-        <h1>{{ title }}</h1>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-
-            <button type="button" onclick="seeUserDetails({{ privatekey }})" class="ok-button" >
-                Register</button>
-
-        </form>
+        <h1>You have created the following user</h1>
+        <label>Username: {{ username }}<br></label>
+        <button class="ok-button" onclick="goBackTwoPages()">Ok</button>
     </div>
 
 
