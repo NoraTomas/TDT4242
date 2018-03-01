@@ -1,5 +1,11 @@
 from ecommerce import settings
 from django.shortcuts import render, get_object_or_404, HttpResponse, Http404
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.views.generic import View
+from .forms import UserForm
+from django.template import loader
+
 
 
 def search(request):
@@ -13,3 +19,13 @@ def search(request):
         if query:
             context['message'] = query
     return render(request, "ecommerce/search.html", context=context)
+
+
+def register_new_user(request):
+    if request.method == "POST":
+        form = UserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+    form = UserForm()
+    return render(request, 'ecommerce/register.html', {'title': 'Register new user',
+                                                       'form': form})
