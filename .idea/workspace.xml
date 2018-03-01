@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d70e1520-b5bb-47c3-b4ea-e05eb36bd455" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/home.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/item_block.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/item_list.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/TDT4242.iml" afterPath="$PROJECT_DIR$/.idea/TDT4242.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/models.py" afterPath="$PROJECT_DIR$/ecommerce/models.py" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/search.html" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/search.html" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/urls.py" afterPath="$PROJECT_DIR$/ecommerce/urls.py" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/views.py" afterPath="$PROJECT_DIR$/ecommerce/views.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/admin.py" afterPath="$PROJECT_DIR$/ecommerce/admin.py" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/ecommerce/migrations/0001_initial.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/ecommerce/templates/ecommerce/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+              <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -105,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/ecommerce/templates/ecommerce/item_block.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -703,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,7 +746,7 @@
     <entry file="file://$PROJECT_DIR$/ecommerce/templates/ecommerce/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -788,7 +780,7 @@
     <entry file="file://$PROJECT_DIR$/ecommerce/templates/ecommerce/item_block.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
