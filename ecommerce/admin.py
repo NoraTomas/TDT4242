@@ -12,8 +12,8 @@ admin.site.register(Cart)
 #change header to the Admin
 admin.site.site_header = "Admin"
 
+
 class ItemAdmin(admin.ModelAdmin):
     list_display = ('name','description','art_nr','price','sale')
 
-#Item model
 admin.site.register(Item,ItemAdmin)
