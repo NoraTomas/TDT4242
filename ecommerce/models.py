@@ -13,8 +13,3 @@ class Item(models.Model):
     price = models.DecimalField()
     sale = models.DecimalField(max_length=100)
 
-
-class PackageDeal(models.Model):
-    items = models.ManyToManyField("Item")
-    price = models.DecimalField()
-
