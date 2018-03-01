@@ -13,11 +13,9 @@ class Item(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=9)
     sale = models.DecimalField(decimal_places=2, max_digits=4)
 
-<<<<<<< HEAD
-=======
 
 class PackageDeal(models.Model):
     items = models.ManyToManyField("Item")
     price = models.DecimalField(decimal_places=2, max_digits=9)
 
->>>>>>> eb0d05afa23662d368c1f7e4d7de67aa486fdaab
+
