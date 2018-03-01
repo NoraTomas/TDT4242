@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login
 from django.views.generic import View
 from .forms import UserForm
 from django.template import loader
+from .models import Item
 
 
 
@@ -19,6 +20,15 @@ def search(request):
         if query:
             context['message'] = query
     return render(request, "ecommerce/search.html", context=context)
+
+
+def home(request):
+    context = {'items' : None}
+    items = Item.objects.all()
+    if items:
+        context['items'] = items
+
+    return render(request, 'ecommerce/home.html', context)
 
 
 def register_new_user(request):
