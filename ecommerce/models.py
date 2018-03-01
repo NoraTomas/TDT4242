@@ -7,6 +7,7 @@ class Cart(models.Model):
 
 
 class Item(models.Model):
+    """Model describing the item-entity."""
     name = models.CharField(max_length=250)
     description = models.CharField(max_length=1000)
     art_nr = models.IntegerField()
@@ -20,6 +21,7 @@ class Item(models.Model):
 
 
 class PackageDeal(models.Model):
+    """Model describing deals of multiple items."""
     items = models.ManyToManyField("Item")
     price = models.DecimalField(decimal_places=2, max_digits=9)
 
@@ -28,6 +30,7 @@ class PackageDeal(models.Model):
 
 
 class Author(models.Model):
+    """Model describing an author of an item."""
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
 
@@ -39,6 +42,7 @@ class Author(models.Model):
 
 
 class Category(models.Model):
+    """Model describing a category of items."""
     name = models.CharField(max_length=100)
     description = models.TextField()
 

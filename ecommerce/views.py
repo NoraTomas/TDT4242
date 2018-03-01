@@ -8,8 +8,8 @@ from django.template import loader
 from .models import Item
 
 
-
 def search(request):
+    """Process query from request, return the queryset as context with template."""
     context = {'message': ''}
     if request.method == 'GET' and request.GET:
         # results = Sear
@@ -23,7 +23,7 @@ def search(request):
 
 
 def home(request):
-    context = {'items' : None}
+    context = {'items': None}
     items = Item.objects.all()
     if items:
         context['items'] = items
