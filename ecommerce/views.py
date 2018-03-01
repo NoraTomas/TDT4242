@@ -29,3 +29,7 @@ def register_new_user(request):
     form = UserForm()
     return render(request, 'ecommerce/register.html', {'title': 'Register new user',
                                                        'form': form})
+
+
+def load_home_page(request):
+    return render(request, 'ecommerce/home.html')

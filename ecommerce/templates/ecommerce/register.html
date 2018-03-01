@@ -1,6 +1,11 @@
 
 {% extends 'ecommerce/base.html' %}
 
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="/static/css/mainstyle.css">
+    <script type="text/javascript" src="/static/js/registration.js"></script>
+{% endblock %}
+
 {% block content %}
 
     <div class="container">
@@ -9,10 +14,10 @@
             {% csrf_token %}
             {{ form.as_p }}
 
-            <input class="save-button" type="submit" value="Register">
+            <button onclick="redirectToHomePage()" class="ok-button" >
+                Register</button>
 
         </form>
-
     </div>
 
 
