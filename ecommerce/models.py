@@ -18,3 +18,4 @@ class PackageDeal(models.Model):
     items = models.ManyToManyField("Item")
     price = models.DecimalField(decimal_places=2, max_digits=9)
 
+
