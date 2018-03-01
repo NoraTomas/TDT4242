@@ -12,9 +12,26 @@ class Item(models.Model):
     art_nr = models.IntegerField()
     price = models.DecimalField(decimal_places=2, max_digits=9)
     sale = models.DecimalField(decimal_places=2, max_digits=4)
+    author = models.ForeignKey("Author", on_delete=None, default=None, blank=True)
+    category = models.ForeignKey("Category", on_delete=None, default=None, blank=True)
 
 
 class PackageDeal(models.Model):
     items = models.ManyToManyField("Item")
     price = models.DecimalField(decimal_places=2, max_digits=9)
 
+
+class Author(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+
+    class Meta:
+        ordering = ('-last_name',)
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+
+    class Meta:
+        ordering = ('-name',)
