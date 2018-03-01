@@ -2,18 +2,19 @@ from django.contrib import admin
 from .models import *
 
 
-# Register your models here.
-
-# Cart model
+# Registering models here.
 admin.site.register(Cart)
+admin.site.register(PackageDeal)
+admin.site.register(Author)
+admin.site.register(Category)
 
 
-
-#change header to the Admin
+# change header to the Admin
 admin.site.site_header = "Admin"
 
 
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ('name','description','art_nr','price','sale')
+    list_display = ('name', 'description', 'art_nr', 'price', 'sale')
+
 
 admin.site.register(Item,ItemAdmin)
