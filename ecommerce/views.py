@@ -8,7 +8,6 @@ from django.template import loader
 from .models import Item
 
 
-
 def search(request):
     context = {'message': ''}
     if request.method == 'GET' and request.GET:

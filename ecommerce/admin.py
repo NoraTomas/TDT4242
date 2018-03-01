@@ -4,7 +4,6 @@ from .models import *
 
 # Registering models here.
 admin.site.register(Cart)
-admin.site.register(Item)
 admin.site.register(PackageDeal)
 admin.site.register(Author)
 admin.site.register(Category)
