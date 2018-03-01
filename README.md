@@ -5,5 +5,3 @@ E-commerce project - exercise 2
 
 created admin account<br>
 -------------------------------------------------------
-username: admin <br>
-password: admin123456<br>
