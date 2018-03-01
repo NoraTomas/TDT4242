@@ -20,22 +20,12 @@ def search(request):
             context['message'] = query
     return render(request, "ecommerce/search.html", context=context)
 
-class UserFormView(View):
-    form_class = UserForm
-    template_name = 'registration.html'
 
-    def get(self, request):
-        form = self.form_class(None)
-        return render(request, self.template_name, {'form: ': form})
-
-    def post(self, request):
-        form = self.form_class(request.POST)
-
+def register_new_user(request):
+    if request.method == "POST":
+        form = UserForm(request.POST)
         if form.is_valid():
-            user = form.save(commit=False)
-
-            #Cleaned (normalized) data
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user.set_password()
-            user.save()
+            user = form.save()
+    form = UserForm()
+    return render(request, 'ecommerce/register.html', {'title': 'Register new user',
+                                                       'form': form})
