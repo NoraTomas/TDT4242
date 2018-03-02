@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UserForm
+from .models import Item
 
 def search(request):
     context = {'message': ''}
@@ -14,6 +15,15 @@ def search(request):
     return render(request, "ecommerce/search.html", context=context)
 
 
+def home(request):
+    context = {'items' : None}
+    items = Item.objects.all()
+    if items:
+        context['items'] = items
+
+    return render(request, 'ecommerce/home.html', context)
+
+
 def register_new_user(request):
     if request.method == "POST":
         form = UserForm(request.POST)
@@ -23,5 +33,3 @@ def register_new_user(request):
     return render(request, 'ecommerce/register.html', {'title': 'Register new user',
                                                        'form': form})
 
-def load_home_page(request):
-    return render(request, 'ecommerce/home.html')
