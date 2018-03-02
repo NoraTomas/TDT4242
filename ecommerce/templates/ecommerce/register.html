@@ -14,7 +14,7 @@
             {% csrf_token %}
             {{ form.as_p }}
 
-            <button type="button" onclick="seeUserDetails({{ privatekey }})" class="ok-button" >
+            <button type="submit" onclick="notifyUserAboutCreatedAccount()"  class="ok-button" >
                 Register</button>
 
         </form>

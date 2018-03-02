@@ -1,7 +1,3 @@
-function redirectToHomePage() {
-    window.location.href = "/home";
-}
-
-function seeUserDetails(id) {
-    window.location.href = "/user/" + id
+function notifyUserAboutCreatedAccount() {
+    window.alert("Congratulations! You have created an account")
 }
