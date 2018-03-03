@@ -23,6 +23,7 @@ def search(request):
 
 
 def home(request):
+    """Render homepage showing searchbar and list of items."""
     context = {'items': None}
     items = Item.objects.all()
     if items:
@@ -32,6 +33,7 @@ def home(request):
 
 
 def register_new_user(request):
+    """Render page for registering a new user and render input from same page"""
     if request.method == "POST":
         form = UserForm(request.POST)
         if form.is_valid():

@@ -38,6 +38,9 @@ ecommerce/.idea/
 #database
 db.sqlite3
 
+#pipfiles
+Pipfile*
+
 
 # Installer logs
 pip-log.txt
