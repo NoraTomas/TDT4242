@@ -8,5 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', search, name = "search" ),
     url(r'^home/$', home, name = "home" ),
-    url(r'^register/', views.register_new_user, name='register')
+    url(r'^register/', views.register_new_user, name='register'),
+    url(r'^cart/(?P<pk>\d+)/$', views.view_cart, name='cart')
 ]
