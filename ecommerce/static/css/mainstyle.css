@@ -4,3 +4,10 @@
     border: none;
     cursor: pointer;
 }
+
+#cart_table {
+    display: flex;
+    justify-content: space-around;
+    border: #003366;
+    padding: 1%;
+}
