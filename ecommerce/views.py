@@ -34,5 +34,12 @@ def register_new_user(request):
                                                        'form': form})
 
 def view_cart(request):
-    return render(request, 'ecommerce/view_cart.html')
+    current_user = request.user
+    all_user_items = Item.objects.filter(owner=current_user)
+
+    context = {
+        'all_user_items': all_user_items
+    }
+
+    return render(request, 'ecommerce/view_cart.html', context)
 
