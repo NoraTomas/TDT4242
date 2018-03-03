@@ -1,12 +1,6 @@
-from ecommerce import settings
-from django.shortcuts import render, get_object_or_404, HttpResponse, Http404
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
-from django.views.generic import View
 from .forms import UserForm
-from django.template import loader
 from .models import Item
-
 
 def search(request):
     context = {'message': ''}
@@ -38,3 +32,4 @@ def register_new_user(request):
     form = UserForm()
     return render(request, 'ecommerce/register.html', {'title': 'Register new user',
                                                        'form': form})
+
