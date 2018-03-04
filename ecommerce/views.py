@@ -33,3 +33,4 @@ def register_new_user(request):
     return render(request, 'ecommerce/register.html', {'title': 'Register new user',
                                                        'form': form})
 
+
