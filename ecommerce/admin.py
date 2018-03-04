@@ -17,4 +17,4 @@ class ItemAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'art_nr', 'price', 'sale')
 
 
-admin.site.register(Item,ItemAdmin)
+admin.site.register(Item, ItemAdmin)
