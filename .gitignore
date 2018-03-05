@@ -36,9 +36,6 @@ ecommerce/.idea/
 *.manifest
 *.spec
 
-#database
-db.sqlite3
-
 
 # Installer logs
 pip-log.txt
