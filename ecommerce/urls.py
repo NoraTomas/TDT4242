@@ -10,5 +10,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     url(r'^home/$', home, name = "home" ),
     url(r'^register/', views.register_new_user, name='register'),
-    url(r'^cart/', views.view_cart, name='cart')
+    url(r'^cart/', views.view_cart, name='cart'),
+    ##url(r'^$',views.home,name='home'),
+    ##path('admin/',views.index1,name='index1'),
 ]

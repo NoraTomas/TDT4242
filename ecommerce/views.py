@@ -45,3 +45,5 @@ def view_cart(request):
     return render(request, 'ecommerce/view_cart.html', context)
 
 
+###def index1(request):
+    ##return render(request,admin.site.urls)

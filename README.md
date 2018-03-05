@@ -24,7 +24,8 @@ Next, in the command line, run the following commands:
  2) http://127.0.0.1:8000/home/ - To see items and add them to the cart,
  also to search items
  3) http://127.0.0.1:8000/admin/ - To log in to the admin panel,
- after logging in, press Items -> Add item, to add new items
+ after logging in, press Items -> Add item, to add new items,
+ and you can search the item in the Admin page, by name,price.......
  and potential package deals  
 
 
