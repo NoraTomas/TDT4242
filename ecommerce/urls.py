@@ -13,5 +13,5 @@ urlpatterns = [
     url(r'^home/$', home, name = "home" ),
     url(r'^register/', views.register_new_user, name='register'),
     url(r'^cart/', views.view_cart, name='cart'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
