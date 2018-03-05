@@ -23,6 +23,7 @@ class Item(models.Model):
 
 
 class PackageDeal(models.Model):
+    name = models.CharField(max_length=250, default="default")
     items = models.ManyToManyField("Item")
     price = models.DecimalField(decimal_places=2, max_digits=9)
 
