@@ -25,6 +25,7 @@ wheels/
 .installed.cfg
 *.egg
 ecommerce/.idea/
+.idea/*
 .idea/misc.xml
 .idea/TDT4242.iml
 .idea/workspace.xml
