@@ -17,6 +17,7 @@
     {% for user_item in all_user_items  %}
         <div id="cart_table">
             <label>Name: {{ user_item.name }}</label>
+            <img src="{{ user_item.image.url }}" width="240">
             <label>Description: {{ user_item.description }}</label>
             <label>Price: {{ user_item.price}}</label>
             <label>Category: {{ user_item.category.name}}</label>
