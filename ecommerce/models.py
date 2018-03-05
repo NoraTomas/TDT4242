@@ -13,6 +13,7 @@ class Item(models.Model):
     art_nr = models.IntegerField()
     price = models.DecimalField(decimal_places=2, max_digits=9)
     sale = models.DecimalField(decimal_places=2, max_digits=4)
+    image = models.CharField(max_length=1000)
     author = models.ForeignKey("Author", on_delete=None, default=None, blank=True)
     category = models.ForeignKey("Category", on_delete=None, default=None, blank=True)
     owner = models.ForeignKey(User, default=0, blank=True, on_delete=None)
