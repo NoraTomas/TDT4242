@@ -23,7 +23,8 @@ Next, in the command line, run the following commands:
  1.1) http://127.0.0.1:8000/login - To login a user
  2) http://127.0.0.1:8000/home/ - To see items and add them to the cart,
  also to search items
- 3) http://127.0.0.1:8000/admin/ - To log in to the admin panel,
+ 3) http://127.0.0.1:8000/cart/ - To see the items in your cart
+ 4) http://127.0.0.1:8000/admin/ - To log in to the admin panel,
  after logging in, press Items -> Add item, to add new items
  and potential package deals  
 
