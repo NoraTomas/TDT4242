@@ -26,10 +26,10 @@ class ItemAdmin(admin.ModelAdmin):
 
 admin.site.register(Item,ItemAdmin)
     #added list view for admin
-    list_display = ('name','description','art_nr','price','sale')
+list_display = ('name','description','art_nr','price','sale')
     #added search function for admin, search by name,price, art number, sale
-    search_fields = ('name','price','art_nr','sale')
-admin.site.register(Item,ItemAdmin)
+search_fields = ('name','price','art_nr','sale')
+
 
 #packgedeal model
 class PackageDealAdmin(admin.ModelAdmin):
@@ -37,4 +37,3 @@ class PackageDealAdmin(admin.ModelAdmin):
     name_hierarchy = 'name'
     ordering = ('-price',)
     filter_horizontal = ('items',)
-admin.site.register(PackageDeal,PackageDealAdmin)
