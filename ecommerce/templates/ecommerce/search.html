@@ -1,8 +1,15 @@
-    <form method="get" action="search/">
+{% block head %}
+    <script type="text/javascript" src="/static/js/search.js"></script>
+{% endblock %}
+<p>
+<button type="button" onclick="goToHomepage()">Home</button>
+</p>
+
+<form method="get" action="search/">
     <input type="text" name="query" placeholder="search">
     <input type="submit" value="search">
-    </form>
+</form>
 
-    <p>
+<p>
     {{ message }}
-    </p>
+</p>
