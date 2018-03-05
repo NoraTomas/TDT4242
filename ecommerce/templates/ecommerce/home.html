@@ -1,6 +1,6 @@
 {% extends "ecommerce/base.html" %}
-
 {% block head %}
+    <script type="text/javascript" src="/static/js/homePage.js"></script>>
     <link rel="stylesheet" type="text/css" href="/static/css/mainstyle.css">
     <script type="text/javascript" src="/static/js/registration.js"></script>
 {% endblock %}
@@ -10,11 +10,16 @@
 
     <button type="button" onclick="goToLoginPage()">Login</button>
 
-    <h1>This is the home page</h1>
+    <h1>E-commerce system</h1>
     <body>
 
+    <input id="homeSearch" type="text" name="homeSearch" placeholder="search for item">
+    <input type="button" id="homeSearchButton" value="Search" onclick="activateSearch()">
+
+    <h3>New user?</h3>
+    <input type="button" id="registerButton" value="Register here" class="ok-button" onclick="sendToRegistration()">
     </body>
-    {% include "ecommerce/search.html" %}
+{#    {% include "ecommerce/search.html" %}#}
     {% include "ecommerce/item_list.html" %}
 
 {% endblock content %}
