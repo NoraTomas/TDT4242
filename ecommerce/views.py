@@ -17,9 +17,9 @@ def search(request):
 
 def home(request):
     context = {'items' : None}
-    items = Item.objects.all()
-    if items:
-        context['items'] = items
+    # items = Item.objects.all()
+    # if items:
+    #     context['items'] = items
 
     return render(request, 'ecommerce/home.html', context)
 
@@ -32,4 +32,16 @@ def register_new_user(request):
     form = UserForm()
     return render(request, 'ecommerce/register.html', {'title': 'Register new user',
                                                        'form': form})
+
+
+def view_cart(request):
+    current_user = request.user
+    all_user_items = Item.objects.filter(owner=current_user)
+
+    context = {
+        'all_user_items': all_user_items
+    }
+
+    return render(request, 'ecommerce/view_cart.html', context)
+
 

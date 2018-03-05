@@ -1,0 +1,34 @@
+{% extends 'ecommerce/base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="/static/css/mainstyle.css">
+    <script type="text/javascript" src="/static/js/registration.js"></script>
+{% endblock %}
+
+{% block content %}
+
+
+
+    <h1>All the users items</h1>
+
+    <button type="button" onclick="goToHomePage()" >
+                Home</button>
+
+    {% for user_item in all_user_items  %}
+        <div id="cart_table">
+            <label>Name: {{ user_item.name }}</label>
+            <label>Description: {{ user_item.description }}</label>
+            <label>Price: {{ user_item.price}}</label>
+            <label>Category: {{ user_item.category.name}}</label>
+            <label>Owner: {{ user_item.owner.username }}</label>
+        </div>
+
+
+    {% endfor %}
+
+
+
+
+
+
+{% endblock %}
