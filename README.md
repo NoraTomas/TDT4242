@@ -21,7 +21,7 @@ Next, in the command line, run the following commands:
 
  1) http://127.0.0.1:8000/register/ - To register a new user
  1.1) http://127.0.0.1:8000/login - To login a user
- 2) 
+ 2)
 
 
 
