@@ -1,22 +1,27 @@
 from django.shortcuts import render, redirect
 from .forms import UserForm
-from .models import Item
+from .models import Item, Category
+from .search.search import process_query
+
 
 def search(request):
-    context = {'message': ''}
+    context = {'error': '',
+               'categories': Category.objects.all(),
+               'query': '',
+               'price_min': None,
+               'price_max': None}
     if request.method == 'GET' and request.GET:
         # results = Sear
-        result = request.GET
-        print(request.GET)
-        query = result['query']
-        print(query)
+        query = request.GET
+        # print(query)
         if query:
-            context['message'] = query
+            context = process_query(query)
+
     return render(request, "ecommerce/search.html", context=context)
 
 
 def home(request):
-    context = {'items' : None}
+    context = {'items': None}
     # items = Item.objects.all()
     # if items:
     #     context['items'] = items
@@ -43,5 +48,3 @@ def view_cart(request):
     }
 
     return render(request, 'ecommerce/view_cart.html', context)
-
-

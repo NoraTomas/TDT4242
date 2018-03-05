@@ -14,11 +14,11 @@ class Item(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=9)
     sale = models.DecimalField(decimal_places=2, max_digits=4)
     author = models.ForeignKey("Author", on_delete=None, default=None, blank=True)
-    category = models.ForeignKey("Category", on_delete=None, default=None, blank=True)
-    owner = models.ForeignKey(User, default=0, blank=True, on_delete=None)
+    category = models.ManyToManyField("Category", default=None, blank=True)
+    owner = models.ManyToManyField(User, default=None, blank=True)
 
     def __str__(self):
-        return "{} {}".format(self.name, self.price)
+        return "{}, {}, {}".format(self.name, self.author, self.price)
 
 
 class PackageDeal(models.Model):
@@ -37,7 +37,7 @@ class Author(models.Model):
         ordering = ('-last_name',)
 
     def __str__(self):
-        return "{} {}".format(self.first_name, self.last_name)
+        return "{}, {}".format(self.last_name, self.first_name)
 
 
 class Category(models.Model):
