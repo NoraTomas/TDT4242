@@ -5,11 +5,26 @@
 <button type="button" onclick="goToHomepage()">Home</button>
 </p>
 
-<form method="get" action="search/">
-    <input type="text" name="query" placeholder="search">
+<form method="get" action="">
+    <label>Search</label>
+    <input type="text" name="query" placeholder="search" value="{{ query }}">
     <input type="submit" value="search">
+
+    <div>
+        Price <br>
+{#        <label>Minimum</label>#}
+        <input type="number" name="price_min" min="0" placeholder="min" value="{{ price_min }}">
+        <br>
+{#        <label>Maximum</label>#}
+        <input type="number" name="price_max" min="0" placeholder="max" value="{{ price_max }}">
+    </div>
+
 </form>
 
 <p>
-    {{ message }}
+    {{ error }}
+</p>
+
+<p>
+    {% include "ecommerce/item_list.html" %}
 </p>
