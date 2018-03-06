@@ -45,6 +45,9 @@ Next, in the command line, run the following commands:
  username: TestUser
  password: testuser314
 
+ You can get to most of the working use cases by pressing the buttons
+ on the http://127.0.0.1:8000/home/ - page
+
 
  1) http://127.0.0.1:8000/register/ - To register a new user
  1.1) http://127.0.0.1:8000/login - To login a user
