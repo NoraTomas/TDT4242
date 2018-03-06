@@ -9,3 +9,7 @@ function sendToRegistration(){
 function sendToAdminPanel() {
     window.location.href = "/admin/"
 }
+
+function sendToCart() {
+    window.location.href = "/cart/"
+}
