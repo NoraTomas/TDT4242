@@ -2,7 +2,7 @@ from ..models import *
 from simple_search import search_filter
 
 
-def search_store(query={}):
+def search_store(query):
     error = ''
     search_fields = ['^name', 'author__last_name', 'author__first_name']
     results = Item.objects.filter(search_filter(search_fields, query['query']))
@@ -27,21 +27,22 @@ def process_query(query):
     context['price_max'] = p_query['price_max']
     print(context['price_min'], context['price_max'])
     if not items:
-        context['error'] = "Sorry, no item matches your search\n"
+        context['error'] += "Sorry, no item matches your search\n"
     return context
 
 
 def preprocess_query(query):
     error = ''
     try:
-        price_min = int(query['price_min']) if int(query['price_min']) >= 0 else 0
-    except ValueError or KeyError:
+        price_min = query['price_min']
+        price_min = int(price_min) if int(price_min) >= 0 else 0
+    except Exception:   # Could not find MultiValueDictError
         price_min = 0
         error += 'Minimum price was not int or less than zero.\n'
 
     try:
         price_max = int(query['price_max']) if int(query['price_max']) > int(query['price_min']) else None
-    except ValueError or KeyError:
+    except Exception:  # Could not find MultiValueDictError
         price_max = None
         error += 'Maximum price was not int or less than minimum price.\n'
         # categories = query['categories']
