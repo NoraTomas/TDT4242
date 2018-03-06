@@ -17,20 +17,7 @@
     <h1>E-commerce system</h1>
     <body>
     <h3>List of all items</h3>
-
-    {% for item in all_items  %}
-        <div id="cart_table">
-            <label>Name: {{ item.name }}</label>
-            <label>Description: {{ item.description }}</label>
-            <label>Price: {{ item.price}}</label>
-        </div>
-
-    {% endfor %}
-
-
-
-
-
+    
 {#    {% include "ecommerce/search.html" %}#}
     {% include "ecommerce/item_list.html" %}
     <h3>New user?</h3>

@@ -1,5 +1,11 @@
 {% for item in items %}
     <div>
-        {% include "ecommerce/item_block.html" %}
+        <label>{{ item.name }}</label>
+        <label>{{ item.price }}</label>
+        <label>{{ item.description }}</label>
+        <label>
+            <button class="ok-button" onclick="addItemToCart({{ item.pk }})">
+                Add to Cart</button>
+        </label>
     </div>
 {% endfor %}

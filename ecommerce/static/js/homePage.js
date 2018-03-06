@@ -17,3 +17,7 @@ function sendToCart() {
 function sendToSearch() {
     window.location.href = "/search/"
 }
+
+function addItemToCart(id) {
+    window.location.href = "/add_item/" + id
+}

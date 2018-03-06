@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import UserForm
 from .models import Item, Category
 from .search.search import process_query
+from django.contrib.auth.models import User
 
 
 def search(request):
@@ -49,3 +50,17 @@ def view_cart(request):
     }
 
     return render(request, 'ecommerce/view_cart.html', context)
+
+
+def add_item(request, pk):
+    item = Item.objects.get(pk=pk)
+    current_user = request.user
+    owner = item.owner
+    owner.add(current_user)
+    all_user_items = Item.objects.filter(owner=current_user)
+
+    context = {
+        'all_user_items': all_user_items
+    }
+    return render(request, 'ecommerce/view_cart.html', context)
+
