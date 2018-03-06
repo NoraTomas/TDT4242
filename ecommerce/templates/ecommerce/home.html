@@ -16,16 +16,25 @@
 
     <h1>E-commerce system</h1>
     <body>
+    <h3>List of all items</h3>
 
-    <input id="homeSearch" type="text" name="homeSearch" placeholder="search for item">
-    <input type="button" id="homeSearchButton" value="Search" onclick="activateSearch()">
+    {% for item in all_items  %}
+        <div id="cart_table">
+            <label>Name: {{ item.name }}</label>
+            <label>Description: {{ item.description }}</label>
+            <label>Price: {{ item.price}}</label>
+        </div>
 
-    <h3>New user?</h3>
-    <input type="button" id="registerButton" value="Register here" class="ok-button" onclick="sendToRegistration()">
-    </body>
+    {% endfor %}
+
+
+
 
 
 {#    {% include "ecommerce/search.html" %}#}
     {% include "ecommerce/item_list.html" %}
+    <h3>New user?</h3>
+    <input type="button" id="registerButton" value="Register here" class="ok-button" onclick="sendToRegistration()">
+    </body>
 
 {% endblock content %}

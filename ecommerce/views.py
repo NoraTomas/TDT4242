@@ -21,7 +21,8 @@ def search(request):
 
 
 def home(request):
-    context = {'items': None}
+    all_items = Item.objects.all()
+    context = {'items': all_items}
     # items = Item.objects.all()
     # if items:
     #     context['items'] = items
