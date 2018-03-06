@@ -3,6 +3,9 @@ from .forms import UserForm
 from .models import Item, Category
 from .search.search import process_query
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views import generic
 
 
 def search(request):
@@ -63,4 +66,9 @@ def add_item(request, pk):
         'all_user_items': all_user_items
     }
     return render(request, 'ecommerce/view_cart.html', context)
+
+class SignUpView(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'ecommerce/signup.html'
 

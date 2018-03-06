@@ -3,7 +3,7 @@ function activateSearch(){
     window.location.href = "/search/?query=" + searchWord
 }
 function sendToRegistration(){
-    window.location.href = "/register/"
+    window.location.href = "/signup/"
 }
 
 function sendToAdminPanel() {
