@@ -22,7 +22,7 @@ pip install -r requirements.txt to install the dependencies.
 We are aware that this process can be a bit cumbersome, so do not hesitate
 to contact us if you need help! We can also (if we have not already)
 arrange meeting times, so you can run the project from our computers with
-the correct setup. 
+the correct setup.
 
 
 Next, in the command line, run the following commands:
@@ -34,7 +34,10 @@ Next, in the command line, run the following commands:
  in the project.
 
  Afterwards, in your browser, navigate to the following links to
- check that the use cases are finished:
+ check that the use cases are finished. To create an admin user please use the
+ following command in your terminal:
+
+ - "python manage.py createsuperuser"
 
  1) http://127.0.0.1:8000/register/ - To register a new user
  1.1) http://127.0.0.1:8000/login - To login a user
