@@ -5,8 +5,25 @@ E-commerce project - exercise 2
 
 # How to run the project
 
-To run this project you need to have Django , Python and PyCharm installed.
-Open the project in PyCharm, and install the needed dependencies.
+To run this project you need to have Django, Python 3.6.x and pip installed.
+The recommended IDE is PyCHarm.
+Once you have cloned the repo and opened the project in PyCharm, you are
+ready to install the needed dependencies.
+
+Make sure pip is available in the terminal, if it is not, you probably need to
+add Python Scripts to your path, for example:
+
+C:\Users\YourUserName\AppData\Local\Programs\Python\Python36-32\Scripts
+
+After everything is properly installed you can run the command:
+
+pip install -r requirements.txt to install the dependencies.
+
+We are aware that this process can be a bit cumbersome, so do not hesitate
+to contact us if you need help! We can also (if we have not already)
+arrange meeting times, so you can run the project from our computers with
+the correct setup. 
+
 
 Next, in the command line, run the following commands:
  - "python manage.py makemigrations"
