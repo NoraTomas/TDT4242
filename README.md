@@ -39,6 +39,13 @@ Next, in the command line, run the following commands:
 
  - "python manage.py createsuperuser"
 
+ You can also log in to the existing admin-account on
+ http://127.0.0.1:8000/admin/:
+
+ username: TestUser
+ password: testuser314
+
+
  1) http://127.0.0.1:8000/register/ - To register a new user
  1.1) http://127.0.0.1:8000/login - To login a user
  2) http://127.0.0.1:8000/home/ - To see items and add them to the cart,
