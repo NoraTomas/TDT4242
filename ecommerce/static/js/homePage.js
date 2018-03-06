@@ -5,3 +5,7 @@ function activateSearch(){
 function sendToRegistration(){
     window.location.href = "/register/"
 }
+
+function sendToAdminPanel() {
+    window.location.href = "/admin/"
+}

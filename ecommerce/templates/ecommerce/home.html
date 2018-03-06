@@ -9,6 +9,8 @@
 {% block content %}
 
     <button type="button" onclick="goToLoginPage()">Login</button>
+    <button type="button" onclick="sendToAdminPanel()">Admin Panel</button>
+    </body>
 
     <h1>E-commerce system</h1>
     <body>
@@ -19,6 +21,8 @@
     <h3>New user?</h3>
     <input type="button" id="registerButton" value="Register here" class="ok-button" onclick="sendToRegistration()">
     </body>
+
+
 {#    {% include "ecommerce/search.html" %}#}
     {% include "ecommerce/item_list.html" %}
 
