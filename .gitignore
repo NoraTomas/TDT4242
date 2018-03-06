@@ -129,9 +129,6 @@ ENV/
 */.idea/**/dynamic.xml
 */.idea/**/uiDesigner.xml
 
-#database
-db.sqlite3
-
 
 # Gradle:
 .idea/**/gradle.xml
