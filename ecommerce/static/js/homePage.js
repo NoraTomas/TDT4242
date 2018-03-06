@@ -13,3 +13,7 @@ function sendToAdminPanel() {
 function sendToCart() {
     window.location.href = "/cart/"
 }
+
+function sendToSearch() {
+    window.location.href = "/search/"
+}
