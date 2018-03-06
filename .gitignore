@@ -130,6 +130,10 @@ ENV/
 */.idea/**/uiDesigner.xml
 
 
+#database
+db.sqlite3
+
+
 # Gradle:
 .idea/**/gradle.xml
 .idea/**/libraries
