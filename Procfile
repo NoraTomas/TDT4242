@@ -1,0 +1,1 @@
+web: gunicorn TDT4242.wsgi --log-file -
