@@ -125,6 +125,8 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
 
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/home/'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

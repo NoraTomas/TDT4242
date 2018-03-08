@@ -1,1 +1,1 @@
-web: gunicorn TDT4242.wsgi --log-file -
+web: gunicorn ecommerce.wsgi --log-file -
