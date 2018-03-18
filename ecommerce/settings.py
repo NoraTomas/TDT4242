@@ -25,7 +25,7 @@ SECRET_KEY = '69u%+3m@lh2y7y@c14-5g+9u-z1_sbp6f!dr8m%^(1v@okd5%)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['noratomas.pythonanywhere.com']
 
 
 # Application definition
