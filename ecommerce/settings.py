@@ -126,5 +126,6 @@ STATICFILES_DIRS = (
 )
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/NoraTomas/TDT4242/ecommerce/staticfiles'
 LOGIN_REDIRECT_URL = '/home/'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
