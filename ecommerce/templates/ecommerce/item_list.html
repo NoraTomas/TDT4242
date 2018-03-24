@@ -1,14 +1,29 @@
+{% block head %}
+    <script type="text/javascript" src="/static/js/homePage.js"></script>>
+    <link rel="stylesheet" type="text/css" href="/static/css/mainstyle.css">
+    <script type="text/javascript" src="/static/js/registration.js"></script>
+{% endblock %}
+
+
 {% for item in items %}
-    <div xmlns="http://www.w3.org/1999/html">
-        <label> {{ item.name }}</label>
-        <label> {{ item.price }}</label>
-        <label> {{ item.description }}</label>
-        {% if item.sale > 0 %}
-            <label> <b>Discount: </b> {{ item.sale }} %</label>
-        {% endif %}
-        <label>
+    <table>
+        <tr>
+            <td col width="115">{{ item.name }}</td>
+            <td col width="115">{{ item.price }}kr</td>
+            <td col width="115">{{ item.description }}</td>
+            {% if item.sale > 0 %}
+                <td col width="115" ><b>Discount: </b> {{ item.sale }} %</td>
+            {% endif %}
+
+            {% if item.sale == 0 %}
+                <td col width="115"><b>Discount: None </b></td>
+            {% endif %}
+
+            <td col width="115">
             <button class="ok-button" onclick="addItemToCart({{ item.pk }})">
                 Add to Cart</button>
-        </label>
-    </div>
+            </td>
+        </tr>
+
+    </table>
 {% endfor %}
