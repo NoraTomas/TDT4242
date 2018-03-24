@@ -20,6 +20,14 @@
                 <td col width="115"><b>Discount: None </b></td>
             {% endif %}
 
+            {% if item.package_deal > 1 %}
+                <td col width="115">Get {{ item.package_deal }} For 1</td>
+            {% endif %}
+
+            {% if item.package_deal == 1%}
+                <td col width="115">No package deal</td>
+            {% endif %}
+
             <td col width="115">
 
             <button class="ok-button" onclick="addItemToCart({{ item.pk }})">

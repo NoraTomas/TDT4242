@@ -15,6 +15,8 @@ class Item(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=9)
     sale = models.IntegerField(default=0, validators=[MaxValueValidator(100),
                                                       MinValueValidator(0)])
+    package_deal = models.IntegerField(default=1, validators=[MaxValueValidator(3),
+                                                              MinValueValidator(1)])
     author = models.ForeignKey("Author", on_delete=None, default=None, blank=True)
     category = models.ManyToManyField("Category", default=None, blank=True)
     owner = models.ManyToManyField(User, default=None, blank=True)
