@@ -5,9 +5,18 @@
     cursor: pointer;
 }
 
-#cart_table {
-    display: flex;
-    justify-content: space-around;
-    border: #003366;
-    padding: 1%;
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
