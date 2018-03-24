@@ -28,9 +28,6 @@ def search(request):
 def home(request):
     all_items = Item.objects.all()
     context = {'items': all_items}
-    # items = Item.objects.all()
-    # if items:
-    #     context['items'] = items
 
     return render(request, 'ecommerce/home.html', context)
 

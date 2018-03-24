@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Cart(models.Model):
@@ -12,7 +13,8 @@ class Item(models.Model):
     description = models.CharField(max_length=1000)
     art_nr = models.IntegerField()
     price = models.DecimalField(decimal_places=2, max_digits=9)
-    sale = models.DecimalField(decimal_places=2, max_digits=4)
+    sale = models.IntegerField(default=0, validators=[MaxValueValidator(100),
+                                                      MinValueValidator(0)])
     author = models.ForeignKey("Author", on_delete=None, default=None, blank=True)
     category = models.ManyToManyField("Category", default=None, blank=True)
     owner = models.ManyToManyField(User, default=None, blank=True)

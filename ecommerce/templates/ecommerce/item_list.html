@@ -1,8 +1,11 @@
 {% for item in items %}
-    <div>
-        <label>{{ item.name }}</label>
-        <label>{{ item.price }}</label>
-        <label>{{ item.description }}</label>
+    <div xmlns="http://www.w3.org/1999/html">
+        <label> {{ item.name }}</label>
+        <label> {{ item.price }}</label>
+        <label> {{ item.description }}</label>
+        {% if item.sale > 0 %}
+            <label> <b>Discount: </b> {{ item.sale }} %</label>
+        {% endif %}
         <label>
             <button class="ok-button" onclick="addItemToCart({{ item.pk }})">
                 Add to Cart</button>
