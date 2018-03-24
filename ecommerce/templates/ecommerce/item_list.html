@@ -9,8 +9,9 @@
     <table>
         <tr>
             <td col width="115">{{ item.name }}</td>
-            <td col width="115">{{ item.price }}kr</td>
+            <td col width="115">{{ item.price }} kr</td>
             <td col width="115">{{ item.description }}</td>
+
             {% if item.sale > 0 %}
                 <td col width="115" ><b>Discount: </b> {{ item.sale }} %</td>
             {% endif %}
@@ -20,6 +21,7 @@
             {% endif %}
 
             <td col width="115">
+
             <button class="ok-button" onclick="addItemToCart({{ item.pk }})">
                 Add to Cart</button>
             </td>

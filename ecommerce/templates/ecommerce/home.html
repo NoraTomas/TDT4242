@@ -12,16 +12,12 @@
     <button type="button" onclick="sendToAdminPanel()">Admin Panel</button>
     <button type="button" onclick="sendToCart()">Cart</button>
     <button type="button" onclick="sendToSearch()">Search Items</button>
-    </body>
 
-    <h1>E-commerce system</h1>
+    <h1>Online Store</h1>
     <body>
-    <h3>List of all items</h3>
-    
-{#    {% include "ecommerce/search.html" %}#}
     {% include "ecommerce/item_list.html" %}
     <h3>New user?</h3>
-    <input type="button" id="registerButton" value="Register here" class="ok-button" onclick="sendToRegistration()">
+        <input type="button" id="registerButton" value="Register here" class="ok-button" onclick="sendToRegistration()">
     </body>
 
 {% endblock content %}
