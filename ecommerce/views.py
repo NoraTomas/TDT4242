@@ -1,8 +1,8 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import UserForm
 from .models import Item, Category
 from .search.search import process_query
-from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
@@ -26,10 +26,16 @@ def search(request):
 
 def home(request):
     all_items = Item.objects.all()
+
+    for item in all_items:
+        if item.sale > 0:
+            sale_percent = float(item.sale) / float(100)
+            new_price_percent = 1 - sale_percent
+            item_price_with_sale = float(item.price) * new_price_percent
+
+            item.price = item_price_with_sale
+
     context = {'items': all_items}
-    # items = Item.objects.all()
-    # if items:
-    #     context['items'] = items
 
     return render(request, 'ecommerce/home.html', context)
 
@@ -54,7 +60,7 @@ def view_cart(request):
 
     return render(request, 'ecommerce/view_cart.html', context)
 
-
+@login_required
 def add_item(request, pk):
     item = Item.objects.get(pk=pk)
     current_user = request.user
