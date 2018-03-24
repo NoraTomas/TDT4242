@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import UserForm
 from .models import Item, Category
@@ -54,7 +55,7 @@ def view_cart(request):
 
     return render(request, 'ecommerce/view_cart.html', context)
 
-
+@login_required
 def add_item(request, pk):
     item = Item.objects.get(pk=pk)
     current_user = request.user
