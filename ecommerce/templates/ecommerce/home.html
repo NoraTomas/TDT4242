@@ -13,6 +13,8 @@
     <button type="button" onclick="sendToCart()">Cart</button>
     <button type="button" onclick="sendToSearch()">Search Items</button>
 
+    <p align="right">Items in Cart: {{ items_in_cart }} </p>
+
     <h1>Online Store</h1>
     <body>
     {% include "ecommerce/item_list.html" %}

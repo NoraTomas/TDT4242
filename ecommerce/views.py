@@ -26,6 +26,13 @@ def search(request):
 
 def home(request):
     all_items = Item.objects.all()
+    items_in_cart = 0
+
+    current_user = request.user
+    current_user_owned_items = Item.objects.filter(owner=current_user)
+
+    for current_user_owned_item in current_user_owned_items:
+        items_in_cart += 1
 
     for item in all_items:
         if item.sale > 0:
@@ -35,7 +42,7 @@ def home(request):
 
             item.price = item_price_with_sale
 
-    context = {'items': all_items}
+    context = {'items': all_items, 'items_in_cart': items_in_cart}
 
     return render(request, 'ecommerce/home.html', context)
 
