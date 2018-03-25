@@ -16,8 +16,6 @@ admin.site.site_header = "Admin"
 
 #item model
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'art_nr', 'price', 'sale')
-    #added list view for admin
     list_display = ('name','description','art_nr','price','sale')
     #added search function for admin, search by name,price, art number, sale
     search_fields = ('name','price','art_nr','sale')
