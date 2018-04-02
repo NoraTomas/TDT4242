@@ -2,6 +2,7 @@
     <script type="text/javascript" src="/static/js/homePage.js"></script>>
     <link rel="stylesheet" type="text/css" href="/staticfiles/css/mainstyle.css">
     <script type="text/javascript" src="/static/js/registration.js"></script>
+
 {% endblock %}
 
 
@@ -30,7 +31,7 @@
 
             <td col width="115">
 
-            <button class="ok-button" onclick="addItemToCart({{ item.pk }})">
+            <button class="ok-button btn-info btn-lg" onclick="addItemToCart({{ item.pk }})"  >
                 Add to Cart</button>
             </td>
         </tr>

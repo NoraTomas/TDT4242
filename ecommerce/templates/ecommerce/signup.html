@@ -1,10 +1,18 @@
 {% extends 'ecommerce/base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/mainstyle.css">
+
+{% endblock %}
 
 {% block content %}
-<h2>Sign up</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Sign up</button>
-</form>
+<div class="col-xs-6 col-md-4 col-center-block">
+    <h2>Sign up</h2>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn1 btn-primary btn-lg">Sign up</button>
+    </form>
+</div>
 {% endblock %}

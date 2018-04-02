@@ -1,14 +1,20 @@
 {% block head %}
     <script type="text/javascript" src="/static/js/search.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/mainstyle.css">
+
 {% endblock %}
+
+<div class="col-xs-6 col-md-4 col-center-block">
 <p>
-<button type="button" onclick="goToHomepage()">Home</button>
+<button type="button" onclick="goToHomepage()" class="btn-primary ">Home</button>
 </p>
 
 <form method="get" action="">
     <label>Search</label>
     <input type="text" name="query" placeholder="search" value="{{ query }}">
-    <input type="submit" value="search">
+    <input type="submit" value="search" class="btn-primary"  >
 
     <div>
         Price <br>
@@ -28,3 +34,4 @@
 <p>
     {% include "ecommerce/item_list.html" %}
 </p>
+</div>

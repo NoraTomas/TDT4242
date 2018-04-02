@@ -1,10 +1,20 @@
 {% extends 'ecommerce/base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/mainstyle.css">
+    <script type="text/javascript" src="/static/js/registration.js"></script>
+{% endblock %}
+
+
 
 {% block content %}
+<div class="col-xs-6 col-md-4 col-center-block">
     <h2>Login</h2>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Login</button>
+            <button type="submit"  class="btn1 btn-primary btn-lg">Login</button>
         </form>
+    </div>
 {% endblock %}
