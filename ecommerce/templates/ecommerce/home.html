@@ -1,5 +1,7 @@
 {% extends "ecommerce/base.html" %}
 {% block head %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <script type="text/javascript" src="/static/js/homePage.js"></script>>
     <link rel="stylesheet" type="text/css" href="/static/css/mainstyle.css">
     <script type="text/javascript" src="/static/js/registration.js"></script>
@@ -8,18 +10,24 @@
 
 {% block content %}
 
-    <button type="button" onclick="goToLoginPage()">Login</button>
-    <button type="button" onclick="sendToAdminPanel()">Admin Panel</button>
-    <button type="button" onclick="sendToCart()">Cart</button>
-    <button type="button" onclick="sendToSearch()">Search Items</button>
-
     <p align="right">Items in Cart: {{ items_in_cart }} </p>
 
-    <h1>Online Store</h1>
+    <div class="col-xs-6 col-md-4 col-center-block">
+        <h1>Online Store</h1>
+        <div class="btn-group">
+            <button type="button" onclick="goToLoginPage()" class="btn btn-primary btn-lg">Login</button>
+            <button type="button" onclick="sendToAdminPanel()" class="btn btn-primary btn-lg">Admin Panel</button>
+            <button type="button" onclick="sendToCart()" class="btn btn-primary btn-lg">Cart</button>
+            <button type="button" onclick="sendToSearch()" class="btn btn-primary btn-lg">Search Items</button>
+        </div>
+    </div>
+
     <body>
     {% include "ecommerce/item_list.html" %}
-    <h3>New user?</h3>
-        <input type="button" id="registerButton" value="Register here" class="ok-button" onclick="sendToRegistration()">
+        <div class="col-xs-6 col-md-4 col-center-block">
+            <h3>New user?</h3>
+            <input type="button" id="registerButton" value="Register here" class="ok-button btn-primary btn-lg" onclick="sendToRegistration()">
+        </div>
     </body>
 
 {% endblock content %}
