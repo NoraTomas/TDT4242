@@ -69,6 +69,7 @@ def add_item(request, pk):
     owner = item.owner
     owner.add(current_user)
     all_user_items = Item.objects.filter(owner=current_user)
+    amount = request.POST.get('item_num')
 
     context = {
         'all_user_items': all_user_items
