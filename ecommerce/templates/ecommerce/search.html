@@ -6,7 +6,7 @@
 
 {% endblock %}
 
-<div class="col-xs-6 col-md-4 col-center-block">
+<div class="col-xs-8 col-md-6 col-center-block">
 <p>
 <button type="button" onclick="goToHomepage()" class="btn-primary ">Home</button>
 </p>
@@ -17,7 +17,7 @@
     <input type="text" name="query" placeholder="search" value="{{ query }}">
     <input type="submit" value="search" class="btn-primary"  >
 
-    <div id="price" class="filter col1">
+    <div id="price" class="filter col-left-block">
         Price <br>
 {#        <label>Minimum</label>#}
         <input type="number" name="price_min" min="0" placeholder="min" value="{{ price_min }}">
@@ -26,19 +26,19 @@
         <input type="number" name="price_max" min="0" placeholder="max" value="{{ price_max }}">
     </div>
 
-    <div id="Categories" class="filter col2">
+    <div id="Categories" class="filter col-center-block">
 
         Categories <br>
-        Separated by ';' <br>
+        Separated by ';'
         <input type="text" name="categories" placeholder="Categories" value="{{ categories }}"> <br>
         {% for c in category_options %}
-            {{ c }} <br>
+            <br> {{ c }}
         {% endfor %}
 
 
     </div>
 
-    <div id="Authors" class="filter col3">
+    <div id="Authors" class="filter col-right-block">
         Authors <br>
         Separated by ';' <br>
         <input type="text" name="authors" placeholder="authors" > <br>

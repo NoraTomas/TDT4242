@@ -22,16 +22,16 @@ def search_store(query):
 def process_query(query):
     context = {'error': ''}
     p_query, error = preprocess_query(query)
-    print(p_query)
+    # print(p_query)
     context['error'] += error
     items, error = search_store(p_query)
-    print(p_query)
+    # print(p_query)
     context['error'] += error
     context['items'] = items
     context['query'] = p_query['query']
     context['price_min'] = p_query['price_min']
     context['price_max'] = p_query['price_max']
-    print(context['price_min'], context['price_max'])
+    # print(context['price_min'], context['price_max'])
     if not items:
         context['error'] += "Sorry, no item matches your search\n"
     return context
@@ -57,14 +57,14 @@ def preprocess_query(query):
 
     try:
         categories = query['categories'].split(';')
-        print("categories:", categories)
+        # print("categories:", categories)
     except Exception:
         categories = []
         error += '\n No categories specified'
 
     try:
         authors = query['authors'].split(';')
-        print("authors:", authors)
+        # print("authors:", authors)
     except Exception:
         authors = []
         error += '\n No authors specified'
@@ -93,6 +93,8 @@ def filter_price(results, price_min=0, price_max=None):
 def filter_author(results, authors=()):
     if not authors:
         return results
+    elif not authors[0]:
+        return results
     else:
         search_fields = ['^last_name', 'first_name']
         authors_string = ''
@@ -104,6 +106,8 @@ def filter_author(results, authors=()):
 
 def filter_categories(results, categories=()):
     if not categories:
+        return results
+    elif not categories[0]:
         return results
     else:
         categories_string = ''
