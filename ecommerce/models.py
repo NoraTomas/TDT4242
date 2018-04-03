@@ -22,6 +22,8 @@ class Item(models.Model):
     category = models.ManyToManyField("Category", default=None, blank=True)
     owner = models.ManyToManyField(User, default=None, blank=True)
 
+    item_number = models.IntegerField(default=1)
+
     def __str__(self):
         return "{}, {}, {}".format(self.name, self.author, self.price)
 

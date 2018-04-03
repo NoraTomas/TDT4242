@@ -6,44 +6,50 @@
 {% endblock %}
 
 
-{% for item in items %}
-    <table>
-        <tr>
-            <td col width="115">{{ item.name }}</td>
-            <td col width="115">{{ item.price }} kr</td>
-            <td col width="115">{{ item.description }}</td>
+<form method="post">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% for item in items %}
+        <table>
+            <tr>
+                <td col width="115">{{ item.name }}</td>
+                <td col width="115">{{ item.price }} kr</td>
+                <td col width="115">{{ item.description }}</td>
 
 
 
-            {% if item.sale > 0 %}
-                <td col width="115" ><b>Discount: </b> {{ item.sale }} %</td>
-            {% endif %}
+                {% if item.sale > 0 %}
+                    <td col width="115" ><b>Discount: </b> {{ item.sale }} %</td>
+                {% endif %}
 
-            {% if item.sale == 0 %}
-                <td col width="115"><b>Discount: None </b></td>
-            {% endif %}
+                {% if item.sale == 0 %}
+                    <td col width="115"><b>Discount: None </b></td>
+                {% endif %}
 
-            {% if item.package_deal > 1 %}
-                <td col width="115">Get {{ item.package_deal }} For 1</td>
-            {% endif %}
+                {% if item.package_deal > 1 %}
+                    <td col width="115">Get {{ item.package_deal }} For 1</td>
+                {% endif %}
 
-            {% if item.package_deal == 1%}
-                <td col width="115">No package deal</td>
-            {% endif %}
+                {% if item.package_deal == 1%}
+                    <td col width="115">No package deal</td>
+                {% endif %}
 
-            <td col width="115"> <label>Enter amoount: </label> <input style="width: 40px">
-            </td>
-
-
-
-            <td col width="115">
+                <td col width="115"> <label>Enter amoount: </label> <input style="width: 40px">
+                </td>
 
 
-            <button class="ok-button btn-info btn-lg" onclick="addItemToCart({{ item.pk }})"  >
-                Add to Cart</button>
-            </td>
 
-        </tr>
+                <td col width="115">
 
-    </table>
-{% endfor %}
+
+                <button type="submit" class="ok-button btn-info btn-lg" onclick="addItemToCart({{ item.pk }})"  >
+                    Add to Cart</button>
+                </td>
+
+            </tr>
+
+        </table>
+    {% endfor %}
+
+</form>
