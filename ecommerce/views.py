@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from .forms import UserForm
+from .forms import UserForm, ItemForm
 from .models import Item, Category
 from .search.search import process_query
 from django.contrib.auth.forms import UserCreationForm
@@ -35,7 +35,9 @@ def home(request):
 
             item.price = item_price_with_sale
 
-    context = {'items': all_items}
+    form = ItemForm
+
+    context = {'items': all_items, 'form': form}
 
     return render(request, 'ecommerce/home.html', context)
 

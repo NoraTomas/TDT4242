@@ -29,6 +29,12 @@
                 <td col width="115">No package deal</td>
             {% endif %}
 
+            <td>
+                <form method="post">
+                    {{ form.as_p }}
+                </form>
+            </td>
+
             <td col width="115">
 
             <button class="ok-button btn-info btn-lg" onclick="addItemToCart({{ item.pk }})"  >
