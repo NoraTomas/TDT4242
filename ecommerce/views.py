@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import UserForm
-from .models import Item, Category
+from .models import Item, Category, Author
 from .search.search import process_query
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
@@ -9,8 +9,13 @@ from django.views import generic
 
 
 def search(request):
+    category_options = [c.name for c in Category.objects.all()]
+    author_options = [a for a in Author.objects.all()]
     context = {'error': '',
-               'categories': Category.objects.all(),
+               'categories': '',
+               'category_options': category_options,
+               'authors': '',
+               'author_options': author_options,
                'query': '',
                'price_min': None,
                'price_max': None}
@@ -20,6 +25,8 @@ def search(request):
         # print(query)
         if query:
             context = process_query(query)
+            context['category_options'] = category_options
+            context['author_options'] = author_options
 
     return render(request, "ecommerce/search.html", context=context)
 

@@ -12,17 +12,40 @@
 </p>
 
 <form method="get" action="">
+{#    {% csrf_token %}#}
     <label>Search</label>
     <input type="text" name="query" placeholder="search" value="{{ query }}">
     <input type="submit" value="search" class="btn-primary"  >
 
-    <div>
+    <div id="price" class="filter col1">
         Price <br>
 {#        <label>Minimum</label>#}
         <input type="number" name="price_min" min="0" placeholder="min" value="{{ price_min }}">
         <br>
 {#        <label>Maximum</label>#}
         <input type="number" name="price_max" min="0" placeholder="max" value="{{ price_max }}">
+    </div>
+
+    <div id="Categories" class="filter col2">
+
+        Categories <br>
+        Separated by ';' <br>
+        <input type="text" name="categories" placeholder="Categories" value="{{ categories }}"> <br>
+        {% for c in category_options %}
+            {{ c }} <br>
+        {% endfor %}
+
+
+    </div>
+
+    <div id="Authors" class="filter col3">
+        Authors <br>
+        Separated by ';' <br>
+        <input type="text" name="authors" placeholder="authors" > <br>
+        {% for a in author_options %}
+            {{ a }} <br>
+        {% endfor %}
+
     </div>
 
 </form>
